@@ -64,7 +64,7 @@ public class HuobiRestConnection {
     Options options = this.getOptions();
 
     String requestUrl =  options.getRestHost() + path;
-    new ApiSignature().createSignature(options.getApiKey(), options.getSecretKey(), "GET", host, path, paramsBuilder);
+    new ApiSignature().createSignature(options.getApiKey(), options.getSecretKey(), "GET", "api.huobi.pro", path, paramsBuilder);
     requestUrl += paramsBuilder.buildUrl();
 
     Request executeRequest = new Request.Builder().url(requestUrl)
@@ -80,7 +80,7 @@ public class HuobiRestConnection {
     Options options = this.getOptions();
 
     String requestUrl =  options.getRestHost() + path;
-    new ApiSignature().createSignature(options.getApiKey(), options.getSecretKey(), "POST", host, path, paramsBuilder);
+    new ApiSignature().createSignature(options.getApiKey(), options.getSecretKey(), "POST", "api.huobi.pro", path, paramsBuilder);
     requestUrl += paramsBuilder.buildUrl();
     Request executeRequest = new Request.Builder().url(requestUrl).post(paramsBuilder.buildPostBody())
         .addHeader("Content-Type", "application/json").build();
