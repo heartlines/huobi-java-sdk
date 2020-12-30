@@ -49,4 +49,6 @@ public class Order {
   @JSONField(deserialize = false)
   private StopOrderOperatorEnum operator;
 
+  private String clientOrderId;
+
 }
